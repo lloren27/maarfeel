@@ -1,17 +1,18 @@
-{
-    "data": [
+
+  {
+    "members": [
       {
         "title": "REVENUE",
         "tablet": 120000,
         "smartphone": 80000
       },
       {
-       "title": "IMPRESIONS",
+        "title": "IMPRESIONS",
         "tablet": 20000000,
         "smartphone": 30000000
       },
       {
-         "title": "VISITS",
+        "title": "VISITS",
         "tablet": 480000000,
         "smartphone": 120000000
       }
