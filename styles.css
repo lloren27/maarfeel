@@ -1,41 +1,40 @@
 
 html {
   font-family: 'Roboto', sans-serif;
+  background-color: blanchedalmond;
   }
-  
-  body {
-    width: 800px;
-    margin: 0 auto;
-  }
-  
-  /* header styles */
-  
   h1 {
     text-align: center;
   }
-  
-  header p {
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-align: center;
-  }
-  
   /* section styles */
   
   section article {
     width: 33%;
     float: left;
   }
-  
   section p {
     margin: 5px 0;
   }
-  
-  section ul {
-    margin-top: 0;
+  section canvas{
+    width:750px;
+    height:250px;
   }
-  
   h2 {
     letter-spacing: -5px;
     margin-bottom: 10px;
+  }
+  h3 {
+    display: inline;
+  }
+  #smartphoneTitulo{
+    color : #72d801;
+  }
+  #tabletTitulo{
+    color : #2f6800;
+  }
+  #smartphoneData{
+    color : #c8c8c8;
+  }
+  #tableData{
+    color : #c8c8c8;
   }

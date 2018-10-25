@@ -1,32 +1,5 @@
-var header = document.querySelector('header');
 var section = document.querySelector('section');
 
-  var data = {
-    labels: ["Smartphone", "Tablet"],
-    datasets: [
-          {
-            label: "REVENUE",
-            backgroundColor: ["#3e95cd", "#8e5ea2"],
-            data: [80000,120000]
-          },
-          {
-            label: "IMPRESIONS",
-            backgroundColor: ["#3e95cd", "#8e5ea2"],
-            data: [30000000,20000000]
-          },
-          {
-            label: "VISITS",
-            backgroundColor: ["#3e95cd", "#8e5ea2"],
-            data: [120000000,480000000]
-          },
-
-        ]
-  };
-var ctx = document.getElementById("myChart").getContext('2d');
-var myChart = new Chart(ctx, {
-  type: 'doughnut',
-  data: data
-});
 
 var requestURL = 'http://localhost:3000/data';
 var request = new XMLHttpRequest();
@@ -45,23 +18,56 @@ function showDates(jsonObj) {
   for (var i = 0; i < dataOpcion.length; i++) {
     var myArticle = document.createElement('article');
     var myH1 = document.createElement('h1');
-    var myPara1 = document.createElement('p');
-    var myPara2 = document.createElement('p');
+    var myPara1 = document.createElement('h3');
+    myPara1.setAttribute("id", "smartphoneTitulo");
+    var myPara2 = document.createElement('h3');
+    myPara2.setAttribute("id", "tabletTitulo");
+    var myPara3 = document.createElement('p');
+    myPara3.setAttribute("id", "smartphoneData");
+    var myPara4 = document.createElement('p');
+    myPara4.setAttribute("id", "tableData");
+    var myCanvas = document.createElement ('canvas')
+    myCanvas.setAttribute("id", "myChart");
 
+    var total = dataOpcion[i].smartphone + dataOpcion[i].tablet;
 
     myH1.textContent = dataOpcion[i].title;
-    myPara1.textContent = dataOpcion[i].tablet;
-    myPara2.textContent = dataOpcion[i].smartphone;
+    myPara1.textContent = "Smartphone " 
+    myPara2.textContent = "Tablet " 
+    myPara3.textContent = (100 * dataOpcion[i].smartphone) / (total)+  "%"  +  " " + dataOpcion[i].smartphone;
+    myPara4.textContent = (100 * dataOpcion[i].tablet) / (total) + "%" + " " + dataOpcion[i].tablet;
+    // var ctx = document.getElementById("myChart").getContext('2d');
+    var data = {
+      labels: ["Smartphone", "Tablet"],
+      datasets: [
+            {
+              backgroundColor: ["#3e95cd", "#8e5ea2"],
+              data: [dataOpcion[i].smartphone,dataOpcion[i].tablet]
+            },
+    
+          ]
+    };
+    // var myChart = new Chart(document.getElementById("myChart").getContext('2d'), {
+    // type: 'doughnut',
+    // data: data
+    // });
 
 
     myArticle.appendChild(myH1);
     myArticle.appendChild(myPara1);
+    myArticle.appendChild(myPara3);
     myArticle.appendChild(myPara2);
+    myArticle.appendChild(myPara4);
+    myArticle.appendChild(myCanvas);
+
 
 
     section.appendChild(myArticle);
+   
   }
 }
+
+
 
 
 // https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/JSON
