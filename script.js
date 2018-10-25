@@ -28,7 +28,7 @@ var myChart = new Chart(ctx, {
   data: data
 });
 
-var requestURL = 'http://localhost:3000/members';
+var requestURL = 'http://localhost:3000/data';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
@@ -44,29 +44,20 @@ function showDates(jsonObj) {
       
   for (var i = 0; i < dataOpcion.length; i++) {
     var myArticle = document.createElement('article');
-    var myH2 = document.createElement('h2');
+    var myH1 = document.createElement('h1');
     var myPara1 = document.createElement('p');
     var myPara2 = document.createElement('p');
-    var myPara3 = document.createElement('p');
-    var myList = document.createElement('ul');
 
-    myH2.textContent = heroes[i].name;
-    myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
-    myPara2.textContent = 'Age: ' + heroes[i].age;
-    myPara3.textContent = 'Superpowers:';
-        
-    var superPowers = heroes[i].powers;
-    for (var j = 0; j < superPowers.length; j++) {
-      var listItem = document.createElement('li');
-      listItem.textContent = superPowers[j];
-      myList.appendChild(listItem);
-    }
 
-    myArticle.appendChild(myH2);
+    myH1.textContent = dataOpcion[i].title;
+    myPara1.textContent = dataOpcion[i].tablet;
+    myPara2.textContent = dataOpcion[i].smartphone;
+
+
+    myArticle.appendChild(myH1);
     myArticle.appendChild(myPara1);
     myArticle.appendChild(myPara2);
-    myArticle.appendChild(myPara3);
-    myArticle.appendChild(myList);
+
 
     section.appendChild(myArticle);
   }
