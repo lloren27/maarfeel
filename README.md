@@ -18,3 +18,5 @@ Así levantamos un server al que podremos acceder desde :
 http://localhost:3000/data
 
 Al que pediremos información mediante una llamada HTTP.
+Despues inyectamos toda la información en el HTML mediante createElement primero  textContent después y para los graficos hemos utilizado Chart.js , mediante la etiqueta canvas y creando el contexto ctx para crear el propio gráfico.
+

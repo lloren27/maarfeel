@@ -40,6 +40,10 @@ function showDates(jsonObj) {
     var data = {
       datasets: [
             {
+              labels: [
+                "Smartphone",
+                "Tablet",
+              ],
               backgroundColor: ["#72d801", "#2f6800"],
               data: [dataOpcion[i].smartphone,dataOpcion[i].tablet]
             },
@@ -53,32 +57,17 @@ function showDates(jsonObj) {
      type: 'doughnut',
      data: data,
      options: {
+      cutoutPercentage: 90,
       responsive: false,
-      elements: {
-				center: {
-					text: myH1,
-          color: '#FF6384', // Default is #000000
-          fontStyle: 'Arial', // Default is Arial
-          sidePadding: 20 // Defualt is 20 (as a percentage)
-				}
-			}
+      
     }
      });
+    var centerX = ((myChart.chartArea.left + myChart.chartArea.right) / 2);
+    var centerY = ((myChart.chartArea.top + myChart.chartArea.bottom) / 2);
+    var txt =  dataOpcion[i].title +" "+ total;
+    ctx.fillText(txt, centerX, centerY);
 
-    
-    /*
-    var canvas = document.getElementById("myChart");
-    var ctx = canvas.getContext('2d')
-     var myChart = new Chart(ctx, {
-     type: 'doughnut',
-     data: data
-     });
-
-    myCanvas.appendChild(myChart);
-    */
-
-
-    myArticle.appendChild(myH1);
+    //myArticle.appendChild(myH1);
     myArticle.appendChild(myCanvas);
     myArticle.appendChild(myPara1);
     myArticle.appendChild(myPara3);
