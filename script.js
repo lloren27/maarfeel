@@ -17,7 +17,12 @@ function showDates(jsonObj) {
       
   for (var i = 0; i < dataOpcion.length; i++) {
     var myArticle = document.createElement('article');
-    var myH1 = document.createElement('h1');
+    var myDivTablet = document.createElement('div');
+    myDivTablet.setAttribute("class", "tablet");
+    var myDivSmartphone = document.createElement('div');
+    myDivSmartphone.setAttribute("class", "smartphone");
+    var myH1 = document.createElement('h4');
+    var myH2 = document.createElement('h2');
     var myPara1 = document.createElement('h3');
     myPara1.setAttribute("id", "smartphoneTitulo");
     var myPara2 = document.createElement('h3');
@@ -28,14 +33,17 @@ function showDates(jsonObj) {
     myPara4.setAttribute("id", "tableData");
     var myCanvas = document.createElement('canvas')
     myCanvas.setAttribute("id", "myChart");
+    var myHr = document.createElement('hr');
 
     var total = dataOpcion[i].smartphone + dataOpcion[i].tablet;
 
-    myH1.textContent = dataOpcion[i].title +" "+ total;
+    myH1.textContent = dataOpcion[i].title;
+    myH2.textContent = total;
     myPara1.textContent = "Smartphone " 
     myPara2.textContent = "Tablet " 
     myPara3.textContent = (100 * dataOpcion[i].smartphone) / (total)+  "%"  +  " " + dataOpcion[i].smartphone;
     myPara4.textContent = (100 * dataOpcion[i].tablet) / (total) + "%" + " " + dataOpcion[i].tablet;
+    
     
     var data = {
       datasets: [
@@ -44,7 +52,7 @@ function showDates(jsonObj) {
                 "Smartphone",
                 "Tablet",
               ],
-              backgroundColor: ["#72d801", "#2f6800"],
+              backgroundColor: ["#2f6800", "#72d801"],
               data: [dataOpcion[i].smartphone,dataOpcion[i].tablet]
             },
     
@@ -53,26 +61,32 @@ function showDates(jsonObj) {
     };
    // var canvas = document.getElementById("myChart");
     var ctx = myCanvas.getContext('2d')
+   
      var myChart = new Chart(ctx, {
      type: 'doughnut',
      data: data,
      options: {
       cutoutPercentage: 90,
       responsive: false,
-      
     }
      });
+   
     var centerX = ((myChart.chartArea.left + myChart.chartArea.right) / 2);
     var centerY = ((myChart.chartArea.top + myChart.chartArea.bottom) / 2);
     var txt =  dataOpcion[i].title +" "+ total;
     ctx.fillText(txt, centerX, centerY);
-
-    //myArticle.appendChild(myH1);
+    myArticle.appendChild(myH1);
+    myArticle.appendChild(myH2);
     myArticle.appendChild(myCanvas);
-    myArticle.appendChild(myPara1);
-    myArticle.appendChild(myPara3);
-    myArticle.appendChild(myPara2);
-    myArticle.appendChild(myPara4);
+    myDivTablet.appendChild(myPara2)
+    myDivTablet.appendChild(myPara4);
+    myArticle.appendChild(myDivTablet);
+    myDivSmartphone.appendChild(myPara1);
+    myDivSmartphone.appendChild(myPara3);
+    myArticle.appendChild(myDivSmartphone);
+
+    myArticle.appendChild(myHr);
+   
    
 
 

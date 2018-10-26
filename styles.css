@@ -19,22 +19,35 @@ html {
     height:250px;
     
   }
+  h4{
+    color:grey !important;
+    text-align: center;
+    margin-right: 180px;
+  }
   h2 {
-    letter-spacing: -5px;
-    margin-bottom: 10px;
+    text-align: center;
+    margin-right: 180px;
   }
   h3 {
     display: inline;
   }
   #smartphoneTitulo{
-    color : #72d801;
+    color : #2f6800;
   }
   #tabletTitulo{
-    color : #2f6800;
+    color : #72d801;
   }
   #smartphoneData{
     color : #c8c8c8;
   }
   #tableData{
     color : #c8c8c8;
+  }
+  .tablet{
+    display: inline-block;
+    margin-left: 10px;
+  }
+  .smartphone{
+    display: inline-block;
+    margin-left: 120px;
   }
