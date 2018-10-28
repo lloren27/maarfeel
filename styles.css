@@ -14,11 +14,6 @@ html {
   section p {
     margin: 5px 0;
   }
-  section canvas{
-    width:750px;
-    height:250px;
-    
-  }
   h4{
     color:grey !important;
     text-align: center;
@@ -32,10 +27,10 @@ html {
     display: inline;
   }
   #smartphoneTitulo{
-    color : #2f6800;
+    color : black;
   }
   #tabletTitulo{
-    color : #72d801;
+    color : black;
   }
   #smartphoneData{
     color : #c8c8c8;

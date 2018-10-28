@@ -4,17 +4,23 @@
       {
         "title": "REVENUE",
         "tablet": 120000,
-        "smartphone": 80000
+        "smartphone": 80000,
+        "colorSmartphone":"#2f6800",
+        "colorTablet":"#72d801"
       },
       {
         "title": "IMPRESIONS",
         "tablet": 20000000,
-        "smartphone": 30000000
+        "smartphone": 30000000,
+        "colorSmartphone":"#235266",
+        "colorTablet":"#45cde3"
       },
       {
         "title": "VISITS",
         "tablet": 480000000,
-        "smartphone": 120000000
+        "smartphone": 120000000,
+        "colorSmartphone":"#c85200",
+        "colorTablet":"#f6c200"
       }
     ]
   }

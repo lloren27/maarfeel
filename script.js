@@ -48,11 +48,8 @@ function showDates(jsonObj) {
     var data = {
       datasets: [
             {
-              labels: [
-                "Smartphone",
-                "Tablet",
-              ],
-              backgroundColor: ["#2f6800", "#72d801"],
+              labels: ["Smartphone","Tablet"],
+              backgroundColor: [dataOpcion[i].colorSmartphone,dataOpcion[i].colorTablet],
               data: [dataOpcion[i].smartphone,dataOpcion[i].tablet]
             },
     
